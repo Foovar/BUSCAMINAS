@@ -70,7 +70,7 @@ void Juego::createMines(){
 }
 
 void Juego::showStats(){
-    std::cout << " Total Jugadores: "<< MAX_PLAYERS << " Total Minas: "<< MAX_MINES << " Slot restantes: "<< (MAX_TABLE * MAX_TABLE) - resolved <<" \n";
+    std::cout << " Total Jugadores: "<< MAX_PLAYERS << " Total de Minas: "<< MAX_MINES << " Slots restantes: "<< (MAX_TABLE * MAX_TABLE) - resolved <<" \n";
     std::cout << " Puntajes: \n";
     for (int i = 0; i < MAX_PLAYERS; i++) {
         std::cout << "\tJugador "<< i + 1 <<": "<< players[i] << " puntos. \n";
@@ -137,3 +137,4 @@ Juego::~Juego(){
         delete table[i];
     }
 }
+
