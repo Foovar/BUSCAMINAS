@@ -15,12 +15,21 @@ int main(int argc, const char * argv[]){
     // menu inicial
     short level, max_players, x, y;
     
+    config:
     std::cout << "\t+++ BUSCAMINAS MAINFRAME +++\n"
     << "Facil(1)\t Normal(2)\t Dificil(3)\t Experto(4)\n"
     << "Elige un nivel: ";
     std::cin >> level;
     std::cout << "Cantidad de jugadores(entre 2 y 5): ";
     std::cin >> max_players;
+    
+    if(!std::cin || (max_players < 2 || max_players > 5) || (level < 0 || level > 4)){
+        std::cout << "\n¡Ingresa los datos correctos!\n";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        goto config;
+    }
+    
     
     Juego buscaminas(level, max_players);
     buscaminas.start();
